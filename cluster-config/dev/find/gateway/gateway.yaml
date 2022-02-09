@@ -182,7 +182,6 @@ kind: TLSStore
 metadata:
   name: default
   namespace: default
-
 spec:
   defaultCertificate:
     secretName: tls-cert-secrets
