@@ -17,5 +17,6 @@ replacements:
   - select:
       name: traefik-ingress-service
       kind: Service
+      namespace: default
     fieldPaths:
     - spec.loadBalancerIP
