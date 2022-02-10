@@ -109,13 +109,13 @@ spec:
         - --providers.file.filename=/usr/share/traefik/config/config.yaml
       imagePullSecrets:
       - name: acr-auth
-      # volumes:
-      # - name: config-volume
-      #   configMap:
-      #     name: cluster-ip
-      #     items:
-      #     - key: CLUSTER_IP
-      #       path: keys
+      volumes:
+      - name: config-volume
+        configMap:
+          name: cluster-ip
+          items:
+          - key: CLUSTER_IP
+            path: keys
 ---
 
 # Source: gateway/templates/traefik-service.yml
