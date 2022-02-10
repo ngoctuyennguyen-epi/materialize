@@ -7,16 +7,16 @@ resources:
   - ./find/gateway/gateway.yaml
   - ./traefik/traefik.yaml
 
-replacements:
-- source:
-    kind: ConfigMap
-    name: cluster-ip
-    namespace: default
-    fieldPath: data.CLUSTER_IP
-  targets:
-  - select:
-      name: traefik-ingress-service
-      kind: Service
-      namespace: default
-    fieldPaths:
-    - spec.loadBalancerIP
+# replacements:
+# - source:
+#     kind: ConfigMap
+#     name: cluster-ip
+#     namespace: default
+#     fieldPath: data.CLUSTER_IP
+#   targets:
+#   - select:
+#       name: traefik-ingress-service
+#       kind: Service
+#       namespace: default
+#     fieldPaths:
+#     - spec.loadBalancerIP
